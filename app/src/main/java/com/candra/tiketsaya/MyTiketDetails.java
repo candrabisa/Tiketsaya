@@ -3,6 +3,8 @@ package com.candra.tiketsaya;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -14,6 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MyTiketDetails extends AppCompatActivity {
 
     TextView destinasi, namakota_detail, totalTicket_Detail, tanggal_ticketDetail, time_ticketDetail, informasi_detail;
+    LinearLayout btn_backCheckout;
 
     DatabaseReference dRef;
 
@@ -27,6 +30,7 @@ public class MyTiketDetails extends AppCompatActivity {
         tanggal_ticketDetail = findViewById(R.id.tanggal_ticketDetail);
         time_ticketDetail = findViewById(R.id.time_ticketDetail);
         informasi_detail = findViewById(R.id.informasi_detail);
+        btn_backCheckout= findViewById(R.id.btn_backCheckout);
 
         //mengambil data dari intent tiket details
         Bundle bundle = getIntent().getExtras();
@@ -48,6 +52,12 @@ public class MyTiketDetails extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
+        btn_backCheckout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
 

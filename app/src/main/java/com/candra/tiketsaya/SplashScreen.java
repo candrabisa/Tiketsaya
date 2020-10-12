@@ -37,7 +37,15 @@ public class SplashScreen extends AppCompatActivity {
         //run animation
         iv_splash.startAnimation(app_splash);
         tv_splash.startAnimation(btt);
-
+//        Handler handler = new Handler();
+//            handler.postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    Intent intentHome = new Intent(SplashScreen.this, LoginActivity.class);
+//                    startActivity(intentHome);
+//                    finish();
+//                }
+//            }, 2000); //2 detik
     }
     public void getUsernameLocal(){
         SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);

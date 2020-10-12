@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -23,6 +24,7 @@ import java.util.Random;
 public class TicketCheckout extends AppCompatActivity {
 
     Button btn_payNow, btnMinus, btnPlus;
+    LinearLayout btn_back;
     TextView tv_jumlahTiket, tv_mySaldo, tv_totalHarga, tv_namaWisata, tv_lokasiWisata, tv_ketentuan;
     ImageView iv_noticeUang;
 
@@ -57,6 +59,7 @@ public class TicketCheckout extends AppCompatActivity {
         btn_payNow = findViewById(R.id.btn_payNow);
         btnMinus = findViewById(R.id.btnMinus);
         btnPlus = findViewById(R.id.btnPlus);
+        btn_back = findViewById(R.id.btn_backCheckout);
 
         tv_namaWisata = findViewById(R.id.tv_namaWisataCheckout);
         tv_lokasiWisata = findViewById(R.id.tv_lokasiWisataCheckout);
@@ -203,6 +206,12 @@ public class TicketCheckout extends AppCompatActivity {
                     }
                 });
 
+            }
+        });
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
     }

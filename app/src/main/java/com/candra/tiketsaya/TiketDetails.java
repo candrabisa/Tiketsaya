@@ -80,8 +80,7 @@ public class TiketDetails extends AppCompatActivity {
         btn_back_details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentBack = new Intent(TiketDetails.this, MainActivity.class);
-                startActivity(intentBack);
+                onBackPressed();
             }
         });
     }

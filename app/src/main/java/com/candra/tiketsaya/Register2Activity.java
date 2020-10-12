@@ -66,9 +66,7 @@ public class Register2Activity extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentBack = new Intent(Register2Activity.this, RegisterActivity.class);
-                startActivity(intentBack);
-                finish();
+                onBackPressed();
             }
         });
         btnContinue.setOnClickListener(new View.OnClickListener() {
@@ -85,23 +83,34 @@ public class Register2Activity extends AppCompatActivity {
 
                 //validasi untuk file (apakah ada?)
                 if (photo_location !=null){
-                    StorageReference storageReference = fStorage.child(System.currentTimeMillis() + "." +
+                    final StorageReference storageReference = fStorage.child(System.currentTimeMillis() + "." +
                             getFileExtension(photo_location));
                     storageReference.putFile(photo_location)
                             .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            String uri_photo = taskSnapshot.getUploadSessionUri().toString();
-                            dReferences.getRef().child("url_photo_profile").setValue(uri_photo);
-                            dReferences.getRef().child("nama_lengkap").setValue(etNama.getText().toString());
-                            dReferences.getRef().child("bio").setValue(etBio.getText().toString());
+                            storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    String uri_photo = uri.toString();
+                                    dReferences.getRef().child("url_photo_profile").setValue(uri_photo);
+                                    dReferences.getRef().child("nama_lengkap").setValue(etNama.getText().toString());
+                                    dReferences.getRef().child("bio").setValue(etBio.getText().toString());
+                                }
+                            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Uri> task) {
+                                    Intent intentReg = new Intent(Register2Activity.this, SuccessRegister.class);
+                                    startActivity(intentReg);
+                                    finish();
+                                }
+                            });
+
                         }
                     }).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                            Intent intentReg = new Intent(Register2Activity.this, SuccessRegister.class);
-                            startActivity(intentReg);
-                            finish();
+
                         }
                     });
                 }

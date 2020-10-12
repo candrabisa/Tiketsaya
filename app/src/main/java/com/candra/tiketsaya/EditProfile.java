@@ -13,6 +13,7 @@ import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -30,6 +31,7 @@ import com.squareup.picasso.Picasso;
 public class EditProfile extends AppCompatActivity {
 
     Button btn_save, btn_cariFoto;
+    LinearLayout btn_back;
     ImageView iv_ProfilEdit;
     EditText et_nameEdit, et_hobiEdit, et_usernameEdit, et_passwordEdit, et_emailEdit;
 
@@ -57,6 +59,7 @@ public class EditProfile extends AppCompatActivity {
         iv_ProfilEdit = findViewById(R.id.iv_ProfilEdit);
         btn_save = findViewById(R.id.btn_saveProfile);
         btn_cariFoto = findViewById(R.id.btn_cariFoto);
+        btn_back = findViewById(R.id.btn_back2);
 
         dRef = FirebaseDatabase.getInstance().getReference().child("Users").child(username_key_new);
         storage = FirebaseStorage.getInstance().getReference().child("Photousers").child(username_key_new);
@@ -123,6 +126,12 @@ public class EditProfile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 findPhoto();
+            }
+        });
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
 
