@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="16dp">
+
+    <RelativeLayout
+        android:id="@+id/rl_ticketDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp">
+
+        <ImageView
+            android:id="@+id/ticketProf"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/pic_ticket" />
+
+        <TextView
+            android:id="@+id/nama_destinasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="6dp"
+            android:layout_toRightOf="@id/ticketProf"
+            android:text="Menara Pisa"
+            android:textColor="@color/blackPrimary"/>
+
+        <TextView
+            android:id="@+id/namakota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nama_destinasi"
+            android:layout_marginStart="16dp"
+            android:layout_toRightOf="@id/ticketProf"
+            android:text="Pisa City, Italy"/>
+
+        <TextView
+            android:id="@+id/total_tiket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:gravity="right"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/namakota"
+            android:text="3 Tickets"
+            android:textColor="@color/blueSecondary"/>
+    </RelativeLayout>
+
+</LinearLayout>

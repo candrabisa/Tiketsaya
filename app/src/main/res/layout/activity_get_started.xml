@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GetStarted">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/appbg_getstarted"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_overlay_getstarted"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/iv_getStarted"
+            android:layout_width="68dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="136dp"
+            android:src="@drawable/emblemwhite"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_getStarted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/mregular"
+            android:lineSpacingExtra="9dp"
+            android:text="Discover\nThe Beauty\nOf Earth"
+            android:textColor="@android:color/white"
+            android:textSize="46dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_getStarted" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginStart="48dp"
+            android:background="@drawable/bg_btn_blue_primary"
+            android:fontFamily="@font/mmedium"
+            android:text="@string/signin"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_getStarted" />
+
+        <Button
+            android:id="@+id/btn_newaccount"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:fontFamily="@font/mmedium"
+            android:background="@drawable/bg_btn_white_primary"
+            android:text="@string/new_account"
+            android:textColor="@color/grayPrimary"
+            android:textSize="22sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginEnd="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+
+        <!--        <TextView-->
+<!--            android:fontFamily="@font/mregular"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textColor="@color/bluePrimary"-->
+<!--            android:text="Hi Welcome \nOnBoard"-->
+<!--            android:layout_marginTop="56dp"-->
+<!--            android:lineSpacingExtra="8dp"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textSize="36dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"/>-->
+<!--        <EditText-->
+<!--            android:layout_width="260dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:background="@drawable/bg_input"-->
+<!--            android:hint="Email Address"-->
+<!--            android:paddingLeft="15dp"-->
+<!--            android:layout_marginBottom="28dp"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/getstarted"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"/>-->
+<!--        <Button-->
+<!--            android:id="@+id/getstarted"-->
+<!--            android:layout_width="220dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:background="@drawable/bg_btn_primary"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:textSize="22sp"-->
+<!--            android:text="Get Stared"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:layout_marginBottom="60dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.497"/>-->
+
+</android.support.constraint.ConstraintLayout>
